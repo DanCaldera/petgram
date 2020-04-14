@@ -24,6 +24,7 @@
   "homepage": "https://github.com/midudev/curso-platzi-react-avanzado#readme",
   "dependencies": {
     "html-webpack-plugin": "^4.2.0",
+    "intersection-observer": "^0.8.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-icons": "^3.9.0",
