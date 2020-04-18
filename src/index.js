@@ -9,6 +9,11 @@ const client = new ApolloClient({
     uri: 'https://petgram-back-00-daniel.now.sh/graphql',
     request: (operation) => {
         const token = window.sessionStorage.getItem('token')
+        console.log(
+            setTimeout(() => {
+                console.log(token)
+            }, 2000)
+        )
         const authorization = token ? `Bearer ${token}` : ''
         operation.setContext({
             headers: {
@@ -19,6 +24,7 @@ const client = new ApolloClient({
     onError: (error) => {
         const { networkError } = error
         if (networkError && networkError.result.code === 'invalid_token') {
+            console.log('hola')
             window.sessionStorage.removeItem('token')
             window.location.href = '/'
         }
