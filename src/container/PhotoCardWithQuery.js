@@ -17,9 +17,10 @@ const GET_SINGLE_PHOTO = gql`
     }
 `
 
-const renderProp = ({ loading, error, data = {} }) => {
-    if (loading) return <h1>Loading...</h1>
-    if (error) return <h1>Error...</h1>
+const renderProp = ({ loading, error, data }) => {
+    if (loading) return <p>Loading...</p>
+    if (error) return <p>Error!</p>
+
     const { photo = {} } = data
     return <PhotoCard {...photo} />
 }
